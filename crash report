@@ -1,0 +1,101 @@
+---- Minecraft Crash Report ----
+// Hi. I'm Minecraft, and I'm a crashaholic.
+
+Time: 6/01/14 12:01 PM
+Description: Starting integrated server
+
+java.lang.ExceptionInInitializerError
+	at net.minecraft.server.MinecraftServer.<init>(SourceFile:114)
+	at bsk.<init>(SourceFile:38)
+	at azd.a(SourceFile:1591)
+	at bbi.a(SourceFile:202)
+	at bcd.a(SourceFile:172)
+	at bbi.a(SourceFile:301)
+	at bcd.d(SourceFile:236)
+	at bcd.k(SourceFile:211)
+	at azd.o(SourceFile:1303)
+	at azd.ad(SourceFile:753)
+	at azd.e(SourceFile:704)
+	at net.minecraft.client.main.Main.main(SourceFile:103)
+Caused by: java.lang.IllegalStateException: failed to create a child event loop
+	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:61)
+	at io.netty.channel.MultithreadEventLoopGroup.<init>(MultithreadEventLoopGroup.java:49)
+	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:61)
+	at io.netty.channel.nio.NioEventLoopGroup.<init>(NioEventLoopGroup.java:52)
+	at ms.<clinit>(SourceFile:31)
+	... 12 more
+Caused by: io.netty.channel.ChannelException: failed to open a new selector
+	at io.netty.channel.nio.NioEventLoop.openSelector(NioEventLoop.java:128)
+	at io.netty.channel.nio.NioEventLoop.<init>(NioEventLoop.java:120)
+	at io.netty.channel.nio.NioEventLoopGroup.newChild(NioEventLoopGroup.java:87)
+	at io.netty.util.concurrent.MultithreadEventExecutorGroup.<init>(MultithreadEventExecutorGroup.java:57)
+	... 16 more
+Caused by: java.io.IOException: Unable to establish loopback connection
+	at sun.nio.ch.PipeImpl$Initializer.run(Unknown Source)
+	at sun.nio.ch.PipeImpl$Initializer.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at sun.nio.ch.PipeImpl.<init>(Unknown Source)
+	at sun.nio.ch.SelectorProviderImpl.openPipe(Unknown Source)
+	at java.nio.channels.Pipe.open(Unknown Source)
+	at sun.nio.ch.WindowsSelectorImpl.<init>(Unknown Source)
+	at sun.nio.ch.WindowsSelectorProvider.openSelector(Unknown Source)
+	at io.netty.channel.nio.NioEventLoop.openSelector(NioEventLoop.java:126)
+	... 19 more
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at sun.nio.ch.Net.connect0(Native Method)
+	at sun.nio.ch.Net.connect(Unknown Source)
+	at sun.nio.ch.Net.connect(Unknown Source)
+	at sun.nio.ch.SocketChannelImpl.connect(Unknown Source)
+	at java.nio.channels.SocketChannel.open(Unknown Source)
+	... 28 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.<init>(SourceFile:114)
+	at bsk.<init>(SourceFile:38)
+
+-- Starting integrated server --
+Details:
+	Level ID: New World---------
+	Level Name: New World
+Stacktrace:
+	at azd.a(SourceFile:1591)
+	at bbi.a(SourceFile:202)
+	at bcd.a(SourceFile:172)
+	at bbi.a(SourceFile:301)
+	at bcd.d(SourceFile:236)
+	at bcd.k(SourceFile:211)
+
+-- Affected screen --
+Details:
+	Screen name: btj
+Stacktrace:
+	at azd.o(SourceFile:1303)
+	at azd.ad(SourceFile:753)
+	at azd.e(SourceFile:704)
+	at net.minecraft.client.main.Main.main(SourceFile:103)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.2
+	Operating System: Windows 7 (x86) version 6.1
+	Java Version: 1.7.0_45, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) Client VM (mixed mode, sharing), Oracle Corporation
+	Memory: 48642672 bytes (46 MB) / 86876160 bytes (82 MB) up to 518979584 bytes (494 MB)
+	JVM Flags: 2 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xmx512M
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	Launched Version: 1.7.2
+	LWJGL: 2.9.0
+	OpenGL: GeForce G210/PCI/SSE2/3DNOW! GL version 3.0.0, NVIDIA Corporation
+	Is Modded: Probably not. Jar signature remains and client brand is untouched.
+	Type: Client (map_client.txt)
+	Resource Packs: []
+	Current Language: Australian English (Australia)
+	Profiler Position: N/A (disabled)
+	Vec3 Pool Size: ~~ERROR~~ NullPointerException: null
+	Anisotropic Filtering: Off (1)
